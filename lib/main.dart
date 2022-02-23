@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/screens/http_handle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HttpHandle(),
+      // home: const HttpHandle(),
+      initialRoute: '/peopleList',
+      routes: <String, WidgetBuilder>{
+        '/peopleList': (context) => PeopleList(),
+        '/peopleUpsert': (context) => PeopleUpsert(),
+      },
     );
   }
 }
